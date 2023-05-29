@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends BaseActivity {
-    ImageView EasterEgg;
-
     int count = 0;
+    ImageView btnUnlock;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         overridePendingTransition(0, 0);
@@ -18,10 +18,8 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initialView();
 
-        EasterEgg = findViewById(R.id.image_view_main_logo);
-
-
-        EasterEgg.setOnClickListener(view -> {
+        btnUnlock = findViewById(R.id.image_view_main_logo);
+        btnUnlock.setOnClickListener(view -> {
             if(view.getId() == R.id.image_view_main_logo){
                 count++;
             }
@@ -39,12 +37,12 @@ public class MainActivity extends BaseActivity {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
             getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
 
