@@ -10,34 +10,6 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_310_1"
-            android:id="@+id/main_image_bg_1" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_310_2"
-            android:id="@+id/main_image_bg_2" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_310_3"
-            android:id="@+id/main_image_bg_3" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_310_4"
-            android:id="@+id/main_image_bg_4" />
-
-        <ImageView
             android:id="@+id/image_view_main_logo"
             android:layout_width="466.2px"
             android:layout_height="70px"
