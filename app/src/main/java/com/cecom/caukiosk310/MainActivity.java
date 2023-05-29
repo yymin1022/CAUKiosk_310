@@ -55,8 +55,6 @@ public class MainActivity extends BaseActivity {
                     Toast.makeText(getApplicationContext(),String.valueOf(count),Toast.LENGTH_SHORT).show();
                 }
                 if(count == 35){
-                    whiteView.setVisibility(View.VISIBLE);
-                    //EasterEggView.setVisibility(View.VISIBLE);
                     KioskModeApp.setIsInLockMode(!KioskModeApp.isInLockMode);
                     enableKioskMode(false);
                 }
