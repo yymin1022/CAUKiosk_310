@@ -25,10 +25,8 @@ public class MainActivity extends BaseActivity {
             if(view.getId() == R.id.image_view_main_logo){
                 count++;
             }
-            if(count > 10){
-                Toast.makeText(getApplicationContext(),String.valueOf(count),Toast.LENGTH_SHORT).show();
-            }
             if(count == 35){
+                Toast.makeText(getApplicationContext(), "Unlocked!!", Toast.LENGTH_SHORT).show();
                 KioskModeApp.setIsInLockMode(!KioskModeApp.isInLockMode);
                 enableKioskMode(false);
             }
