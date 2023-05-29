@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 public class MainActivity extends BaseActivity {
     int count = 0;
     ImageView btnUnlock;
+    VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -17,6 +19,8 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialView();
+
+        videoView = findViewById(R.id.main_video_view);
 
         btnUnlock = findViewById(R.id.image_view_main_logo);
         btnUnlock.setOnClickListener(view -> {
