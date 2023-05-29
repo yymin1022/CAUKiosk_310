@@ -15,15 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends BaseActivity {
-    int curBG = 4;
-    ImageView imageBg1;
-    ImageView imageBg2;
-    ImageView imageBg3;
-    ImageView imageBg4;
-
     ImageView EasterEgg;
-    //ImageView EasterEggView;
-    ImageView whiteView;
     boolean lockCount = true;
 
     DevicePolicyManager devicePolicyManager = null; // devicePolicyManager used to activate device admin
@@ -36,11 +28,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialView();
-
-        imageBg1 = findViewById(R.id.main_image_bg_1);
-        imageBg2 = findViewById(R.id.main_image_bg_2);
-        imageBg3 = findViewById(R.id.main_image_bg_3);
-        imageBg4 = findViewById(R.id.main_image_bg_4);
 
         EasterEgg = findViewById(R.id.image_view_main_logo);
 
@@ -60,107 +47,8 @@ public class MainActivity extends BaseActivity {
                 }
             }
         });
-        imageBg1.setVisibility(View.VISIBLE);
-        imageBg2.setVisibility(View.INVISIBLE);
-        imageBg3.setVisibility(View.INVISIBLE);
-        imageBg4.setVisibility(View.INVISIBLE);
-
-        mBGHandler.sendEmptyMessage(0);
         setUpAdmin();
-
     }
-
-
-
-
-    Handler mBGHandler = new Handler(){
-        @SuppressLint("HandlerLeak")
-        public void handleMessage(Message msg){
-            switch(curBG){
-                case 1:
-                    imageBg2.setAlpha(0f);
-                    imageBg2.setVisibility(View.VISIBLE);
-                    imageBg2.animate()
-                            .alpha(1f)
-                            .setDuration(500)
-                            .setListener(null);
-
-                    imageBg1.animate()
-                            .alpha(0f)
-                            .setDuration(500)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    imageBg1.setVisibility(View.INVISIBLE);
-                                }
-                            });
-
-                    curBG = 2;
-                    break;
-                case 2:
-                    imageBg3.setAlpha(0f);
-                    imageBg3.setVisibility(View.VISIBLE);
-                    imageBg3.animate()
-                            .alpha(1f)
-                            .setDuration(500)
-                            .setListener(null);
-
-                    imageBg2.animate()
-                            .alpha(0f)
-                            .setDuration(500)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    imageBg2.setVisibility(View.INVISIBLE);
-                                }
-                            });
-
-                    curBG = 3;
-                    break;
-                case 3:
-                    imageBg4.setAlpha(0f);
-                    imageBg4.setVisibility(View.VISIBLE);
-                    imageBg4.animate()
-                            .alpha(1f)
-                            .setDuration(500)
-                            .setListener(null);
-
-                    imageBg3.animate()
-                            .alpha(0f)
-                            .setDuration(500)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    imageBg3.setVisibility(View.INVISIBLE);
-                                }
-                            });
-
-                    curBG = 4;
-                    break;
-                case 4:
-                    imageBg1.setAlpha(0f);
-                    imageBg1.setVisibility(View.VISIBLE);
-                    imageBg1.animate()
-                            .alpha(1f)
-                            .setDuration(500)
-                            .setListener(null);
-
-                    imageBg4.animate()
-                            .alpha(0f)
-                            .setDuration(500)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    imageBg4.setVisibility(View.INVISIBLE);
-                                }
-                            });
-
-                    curBG = 1;
-                    break;
-            }
-            mBGHandler.sendEmptyMessageDelayed(0, 10000);
-        }
-    };
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
