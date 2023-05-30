@@ -2,6 +2,7 @@ package com.cecom.caukiosk310;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,6 +35,14 @@ public class MainActivity extends BaseActivity {
             }
         });
         setUpAdmin();
+
+        Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/raw/video");
+        videoView.setVideoURI(videoUri);
+        videoView.setOnPreparedListener(mp -> {
+            mp.setVolume(1.0f, 1.0f);
+            mp.setLooping(true);
+            mp.start();
+        });
     }
 
     @Override
